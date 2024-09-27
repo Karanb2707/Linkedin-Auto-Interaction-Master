@@ -1,0 +1,25 @@
+{
+  "name": "LinkedIn Auto Interaction",
+  "version": "0.0.3",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "https://www.linkedin.com/*"
+  ],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/feed/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
